@@ -1,0 +1,311 @@
+/* ===== 本地备用字体 ===== */
+        @font-face {
+            font-family: 'Noto Serif SC';
+            src: url('fonts/NotoSerifSC-Regular.woff2') format('woff2'),
+                 url('fonts/NotoSerifSC-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Noto Serif SC';
+            src: url('fonts/NotoSerifSC-Medium.woff2') format('woff2'),
+                 url('fonts/NotoSerifSC-Medium.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+       @font-face {
+            font-family: 'Noto Serif SC';
+            src: url('fonts/NotoSerifSC-Medium.woff2') format('woff2'),
+                 url('fonts/NotoSerifSC-Medium.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        :root{
+            --light-bg:#FFF9E6;
+            --dark-bg:#1F2937;
+            --text-light:#F9FAFB;
+            --text-dark:#563502;
+            --accent:#D97706;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html{scroll-behavior:smooth;}
+        body{
+            font-family:'Noto Serif SC',serif;
+            line-height:1.9;
+            color:var(--text-dark);
+            font-size:20px;   /* 整体放大 1.25 倍（默认 16 → 20） */
+        }
+        .content-wrap{
+            max-width:66vw;
+            margin:0 auto;
+            padding:0 24px;
+            text-align: justify; /* 添加这一行 */
+        }
+        p{
+            text-indent:2em;
+            margin-bottom:1.4em;
+            font-size:24px;
+            font-weight:600;/* 这里调整字体大小*/
+            letter-spacing:.02em;
+             text-align: justify; /* 添加这一行 */
+        }
+        .light{background:var(--light-bg);}
+        .dark{background:var(--dark-bg);}
+        .light p{color:var(--text-dark);}
+        .dark  p{color:var(--text-light);}
+        h1,h2{
+            font-weight:600;
+            text-align:center;
+            margin:2em 0 1.2em;
+            letter-spacing:.08em;
+            color:var(--accent);
+        }
+        h1{font-size:42px;}
+        h2{font-size:36px;}
+        .nav{
+            position:fixed;
+            left:20px;bottom:20px;z-index:999;
+            background:rgba(0,0,0,.7);backdrop-filter:blur(8px);
+            padding:10px 15px;border-radius:12px;font-size:14px;
+            display:flex;flex-direction:column;gap:6px;
+        }
+        .nav a{color:var(--text-light);text-decoration:none;}
+        .nav a.active{color:var(--accent);font-weight:700;}
+        section{padding:90px 0;}
+        @media(max-width:900px){.content-wrap{max-width:90vw;}}
+#statusText {
+    white-space: pre-wrap; /* 支持换行 */
+}
+
+
+  @font-face {
+    font-family: 'Noto Serif SC';
+    src: url('fonts/NotoSerifSC-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  .danmaku-text {
+    position: absolute;
+    white-space: nowrap;
+    font-weight: bold;
+    will-change: transform;
+    user-select: none;
+    pointer-events: none;
+  }
+
+
+  @font-face {
+            font-family: 'Noto Serif SC';
+            src: url('fonts/NotoSerifSC-Regular.woff2') format('woff2'),
+                 url('fonts/NotoSerifSC-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        #container {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            z-index: 999;
+        }
+
+        #chart {
+            flex: 1;
+            height: 450px;
+        }
+
+        #buttons {
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn:hover {
+            border-color: #5470C6;
+            color: #5470C6;
+        }
+
+        .btn.active {
+            background-color: #ec7f55;
+            color: white;
+            border-color: #ec7f55;
+            box-shadow: 0 4px 8px rgba(84, 112, 198, 0.4);
+        }
+
+            #team-info {
+        text-align: center;
+    }
+
+
+
+
+
+    
+
+    #main {
+    width: 600px;
+    height: 600px;
+    background-color: #1f293700;
+    margin: 20px auto; /* 水平居中容器（可选） */
+}
+
+
+
+
+ /* 容器正常文档流，带相对定位方便内部绝对定位 */
+  #interactiveSection {
+    position: relative;
+    height: 600px; /* 你可以根据需要调整容器高度 */
+    margin: 150px auto;
+    max-width: 1000px;
+    border: 1px solid #dddddd00; /* 方便看位置，实际用时可去掉 */
+  }
+
+  /* 三个区域整体固定在容器中间 */
+  .floating-container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(30px);
+    display: flex;
+    gap: 40px;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  /* 显示状态 */
+  .floating-container.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  .card {
+    background: #ffddb1c3;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    border-radius: 8px;
+    padding: 20px 30px;
+    width: 300px;
+    text-align: center;
+  }
+
+  .small-text {
+    font-size: 18px;
+    font-weight: 700; /* 加粗 */
+    color: #666;
+    margin-bottom: 8px;
+  }
+
+  .large-text {
+    font-size: 30px;
+    font-weight: 900; /* 更加粗 */
+    color: #170606;
+  }
+
+
+
+  /* hero2：正常文档流内块，占满一屏 */
+  .hero2 {
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/副封面.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* 覆盖层：覆盖整个视口，脱离文档流 */
+  .coverTransition {
+    position: absolute; /* 关键点：绝对定位，不脱离文档流但覆盖viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    overflow: hidden;
+    pointer-events: none; /* 不阻挡滚动/点击 */
+  }
+
+  .coverLayer {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 3s ease;
+  }
+
+  .cover1 { opacity: 1; }  /* 初始显示封面1 */
+  .cover2 { opacity: 0; }  /* 封面2待渐显 */
+
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+
+
+/* ==== 地图独立样式，不影响全局 ==== */
+#chinaMapWrapper {
+    width: 1050px;
+    height: 600px; /* 下半部分裁掉南海 */
+    margin: 0 auto;
+    position: relative;
+    background-color: #FFF9E6;
+}
+
+/* 地图容器 */
+#chinaMapInner {
+    width: 200%;
+    height: auto;
+}
+
+/* 数据来源 */
+#chinaMapSource {
+    position: absolute;
+    bottom: 8px;
+    left: 20px;
+    font-size: 14px;
+    font-family: 'SimHei', 'KaiTi', 'STKaiti', serif;
+    color: #444;
+}
+
+
+/* 纵向文字 */
+#chinaMapTipText {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    line-height: 1.5;
+    transform: rotate(0deg);
+    margin-top: -350px; /* 如果需要微调 */
+      z-index: 999;  /* 保证在地图上方 */
+          font-size: 16px;
+}

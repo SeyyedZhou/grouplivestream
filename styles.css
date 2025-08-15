@@ -1,0 +1,367 @@
+
+.anrandeyitian {
+    font-size: 2.2rem !important; /* 字号稍大 */
+    margin-bottom: 10px;
+    letter-spacing: 0.025em;
+    color: #ed7e2f; 
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 500;
+}
+.fubiaoti-text {
+    font-size: 1.2rem !important; 
+    margin-bottom: 10px;
+    letter-spacing: 0.025em;
+    color: #ffc77df1; /* 浅粉色 */
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 500;
+}
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap');        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .eyes-clock-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        .eyes-clock-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    height: 384px;
+    transform: scale(0.8);
+    left: -60px; /* 初始位置 */
+    transition: left 0.3s ease; /* 平滑过渡效果 */
+}
+        .clock-container {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .clock-circle {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+        }
+        .hour-range {
+            position: absolute;            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease;
+            font-family: 'Inter', sans-serif;
+            color: #9CA3AF;
+            font-size: 1.25rem;
+            font-weight: 600;
+            left: 50%;
+            top: 50%;
+        }
+        .hour-range.active {
+            color: white;
+            font-size: 2.25rem;
+            font-weight: 900;
+            transform: translate(-50%, -50%) scale(1.5);
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);        
+        }
+.eye-container {
+    position: relative;
+    z-index: 10;
+    transform: translate(-238px, 0px); /* 向右50px，向下30px */
+    transition: transform 0.3s ease; /* 平滑过渡效果 */
+}
+        .eye {
+            width: 123px;
+            height: 123px;
+            border-radius: 50%;
+            border: 3px solid white;            
+            background-color: white;            
+            position: relative;
+            overflow: hidden;        
+        }
+        .eye-closed {
+            position: absolute;
+            width: 81px;
+            height: 3px;
+            background-color: #374151;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);            
+            display: none;
+        }
+        .eye-pupil {
+            position: absolute;            
+            width: 51px;
+            height: 51px;
+            background-color: #374151;
+            border-radius: 50%;
+            transition: all 0.3s ease-out;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);        
+        }
+        .eye-pupil.blinking {
+            transform: translate(-50%, -50%) scaleY(0);        
+        }
+        .eye-highlight {
+            position: absolute;            
+            width: 16px;
+            height: 16px;
+            background-color: white;
+            border-radius: 50%;
+            top: 6px;
+            left: 6px;
+        }
+        .happy-effect {
+            position: absolute;            
+            inset: 0;
+            background-color: white;
+            opacity: 0.6;
+            border-radius: 50%;            
+            transform: scaleY(0.5);
+            top: 33.333333%;
+            display: none;
+        }
+        .eyebrow {
+            position: absolute;
+            top: -19px;
+            left: 18px;
+            width: 81px;
+            height: 6px;
+            background-color: white;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+        .time-display {
+            position: absolute;
+            top: 50%;            
+            right: 10%;
+            text-align: center;
+            transform: translate(0, -50%);        
+        }
+        .title-text {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.025em;
+            color: #ff7b7b;
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 500;
+        }
+        .time-box {
+            background-color: white;
+            color: #1F2937;            
+            padding: 15px 24px;
+            border-radius: 9999px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Noto Serif SC', serif;
+            margin-bottom: 10px;
+        }
+        .status-text {            
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-family: 'Noto Serif SC', serif;
+        }    
+        
+        .full-width-image-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible; /* 确保内容不会被隐藏 */
+    margin: 0; /* 移除上下边距 */
+    padding: 0; /* 移除填充 */
+    border: none; /* 移除边框 */
+}
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0; /* 移除图片的边距 */
+    padding: 0; /* 移除图片的填充 */
+    border: none; /* 移除图片的边框 */
+}
+         body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            position: relative;
+            min-height: 500px;
+            margin-bottom: 50px;
+        }
+        .image-container5 {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .main-image5 {
+    width: 150%;
+    height: auto;
+    display: block;
+    margin-left: -400px;/* 手机屏幕左右位置 */
+    
+}
+
+        .tag-button {
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            transform: scale(1);
+    
+        }
+        .tag-button:hover {
+            transform: scale(1.2);
+        }
+        .tag {
+            display: none;
+            position: absolute;
+            right: 10%;
+            top: 10px;
+            z-index: 20;
+        }
+        .tag-1 {
+            top: -30px;
+            right: 10px;
+        }
+        .tag-2 {
+            top: 100px;
+        }
+        .adjust-position-1 {
+    margin-top: -260px; /* 第一个段落向上移动20px 已用 */
+}
+
+.adjust-position-2 {
+    margin-top: -10px; /* 第二个段落向上移动10px */
+}
+
+.adjust-position-3 {
+    margin-top: -30px; /* 第三个段落向上移动30px */
+}
+        .interactive-container {
+            position: relative;
+            margin: 20px 0;
+            height: 500px; /* 设置容器高度，避免内容抖动 */
+        }
+
+        #avatar {
+            width: 190px;/* 头像大小 */
+            height: 190px;
+            border-radius: 50%;
+            position: absolute;
+            left: 30px;
+            top: 20px;
+        }
+
+        .image-placeholder {
+            width: 500px;
+            height: 500px;
+            background-color: #ddd;
+            margin-left: 70px; /* 头像宽度 + 间距 */
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .imagetool {
+            width: 963px;
+            height: 395px;
+            margin-left: 16px; 
+        }
+        .imagetool1 {
+            width: 963px;
+            height: 453px;
+            margin-left: 7px; 
+        }
+        .imagetool2 {
+            width: 900px;
+            height: 130px;
+            margin-left: 20px; 
+        }
+
+        .imagetool3 {
+            width: 760px;
+            height: 90px;
+            margin-left: 80px; 
+        }
+
+        .imagetool4 {
+            width: 950px;
+            height: 450px;
+            margin-left: 15px; 
+        }
+        .imagetool5 {
+    position: absolute; /* 让图片浮动在页面上 */
+    top: 30px; /* 距离父容器顶部0 */
+    left: 0; /* 距离父容器左侧0 */
+    width: 950px;
+    height: 375px;
+    margin-left: 15px; 
+    z-index: 9999; /* 确保在最上层 */
+    pointer-events: none; /* 不阻挡下面组件的交互 */
+}
+    
+        .imagetool6 {
+            width: 950px;
+            height: auto;
+            margin-left: 15px; 
+        }
+
+                .imagetool7 {
+            width: 950px;
+            height: auto;
+            margin-left: 0px; 
+            margin-top: 30px;
+        }
+
+
+
+
+        /* 以下为SVG图像样式 */
+        .dialogue-image {
+            width: 850px;/* 这里调整对话框大小 */
+            height: 850px;
+            position: absolute;
+            left: 200px; /* 图片左边间距 */
+            top: -300px;/* 图片上边间距 */
+            opacity: 0; /* 初始透明度为0 */
+            transition: opacity 0.5s; /* 平滑过渡效果 */
+        }
+        
+        /* 荧光笔划线效果 */
+.highlight{
+    display:inline;
+    background:#ff7b7b30;      /* 荧光底色 */
+    border-radius:3px;
+    padding:0 3px 1px;
+    font-weight:bold;          /* 加粗 */
+    color:inherit;             /* 保持原有文字颜色 */
+}
+.highlight2{
+    display:inline;
+    background:#ffb95dbc;      /* 荧光底色 */
+    border-radius:3px;
+    padding:0 3px 1px;
+    font-weight:bold;          /* 加粗 */
+    color:inherit;             /* 保持原有文字颜色 */
+}
+
+

@@ -1,0 +1,612 @@
+
+
+  /* ---- 完全隔离到 .marquee3d-demo 下，避免污染全局 ---- */
+.marquee3d-demo { box-sizing: border-box; font-family: system-ui, "Helvetica Neue", Arial; }
+
+/* 容器（只影响这个组件） */
+.marquee3d-demo .marquee3d-container {
+  position:relative;
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
+  margin: 0px auto;
+  top: -40px; 
+  left: 50px;
+  perspective: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 保持原来 3D 倾斜效果（和你最开始风格接近） */
+.marquee3d-demo .marquee3d-wrapper {
+  display: flex;
+  gap: 20px;
+  transform:
+    translateX(-100px)
+    translateZ(-100px)
+    rotateX(20deg)
+    rotateY(-10deg)
+    rotateZ(20deg);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* 每一列（外容器负责裁剪） */
+.marquee3d-demo .marquee3d-col {
+  width: 200px;
+  height: 400px;           /* 视口高度 —— 调整可看到更多/更少卡片 */
+  overflow: hidden;        /* 关键：隐藏超出的那一份复制内容 */
+  position: relative;
+}
+
+/* 内层 track（我们对这个做 translateY） */
+.marquee3d-demo .marquee3d-track {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  will-change: transform;
+  /* smooth fallback for transform layout */
+  transform: translateY(0);
+}
+
+/* 卡片样式（尽量接近你最开始的样式） */
+.marquee3d-demo .marquee3d-card {
+  width: 160px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.085);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.marquee3d-demo .marquee3d-card .header {
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.marquee3d-demo .marquee3d-card .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffbb62; /* 灰色头像 */
+  flex: 0 0 36px;
+}
+.marquee3d-demo .marquee3d-card figcaption {
+  margin:0;
+  font-size:16px;
+  font-weight:600;
+}
+.marquee3d-demo .marquee3d-card p {
+  margin:0;
+  font-size:15px;
+  color:#666;
+}
+.marquee3d-demo .marquee3d-card blockquote {
+  margin:8px 0 0 0;
+  padding:0;
+  font-size:15px;
+  color:#333;
+}
+
+/* 渐变遮罩（上/下/左右） */
+.marquee3d-demo .marquee3d-fade {
+  position:absolute;
+  pointer-events:none;
+  z-index: 8;
+}
+.marquee3d-demo .marquee3d-fade.top {
+  top:0; left:0; right:0; height:45%;
+  background: linear-gradient(to bottom, #FFF9E6, rgba(249,250,251,0));
+}
+.marquee3d-demo .marquee3d-fade.bottom {
+  bottom:0; left:0; right:0; height:45%;
+  background: linear-gradient(to top, #FFF9E6, rgba(249,250,251,0));
+}
+.marquee3d-demo .marquee3d-fade.left {
+  left:0; top:0; bottom:0; width:35%;
+  background: linear-gradient(to right, #FFF9E6, rgba(249,250,251,0));
+}
+.marquee3d-demo .marquee3d-fade.right {
+  right:0; top:0; bottom:0; width:35%;
+  background: linear-gradient(to left, #FFF9E6, rgba(249,250,251,0));
+}
+
+/* 小优化：防止内部元素被选中影响体验 */
+.marquee3d-demo .marquee3d-card, .marquee3d-demo .marquee3d-card * { user-select: none; -webkit-user-select: none; }
+
+
+
+  /* 外层限制最大宽度，可调节整体大小 */
+  .image-row-wrapper {
+    max-width: 900px; /* 调整体最大宽度 */
+    margin: 40px auto;
+  }
+
+  .image-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .img-wrapper {
+    flex-shrink: 0;
+    perspective: 1000px;
+    border-radius: 20px;
+  }
+
+  /* 用百分比控制宽度，和高度自动 */
+  .img-left img {
+    width: auto;  /* 左图占比 */
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transform-style: preserve-3d;
+  }
+
+  .img-right img {
+    width: auto; /* 右图占比 */
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transform-style: preserve-3d;
+  }
+
+  .img-wrapper.hover img {
+    transform: scale(1.05);
+    box-shadow:
+      0 25px 35px rgba(0, 0, 0, 0.25),
+      0 10px 15px rgba(0, 0, 0, 0.15);
+  }
+
+
+
+  /* 外层容器：控制布局 */
+.text-image-wrap {
+    position: relative;      /* 让内部元素能相对定位 */
+    display: flex;           /* 横向布局 */
+    align-items: flex-start; /* 顶部对齐 */
+}
+
+.text-image-wrap1 {
+    position: relative;      /* 让内部元素能相对定位 */
+    display: flex;           /* 横向布局 */
+    align-items: flex-start; /* 顶部对齐 */
+}
+
+/* 左侧文字列 */
+.text-column {
+    max-width: calc(100% - 550px); /* 220px = 图片宽度 + 间距 */
+    margin-right: 40px;            /* 与图片间距 */
+}
+.text-column1 {
+    max-width: calc(100% - 670px); /* 220px = 图片宽度 + 间距 */
+    margin-right: -20px;            /* 与图片间距 */
+}
+
+/* 右侧固定图片 */
+.fixed-image {
+    width: 700px;       /* 图片占位宽度，可调 */
+    flex-shrink: 0;     /* 防止被压缩 */
+    position: relative;   /* 滚动时固定 */
+    top: -20px;          /* 距顶部的固定位置，可调 */
+    right: -60px;
+}
+
+.fixed-image1 {
+    width: 450px;       /* 图片占位宽度，可调 */
+    flex-shrink: 0;     /* 防止被压缩 */
+    position: relative;   /* 滚动时固定 */
+    top: -10px;          /* 距顶部的固定位置，可调 */
+    right: -40px;
+}
+
+.fixed-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.fixed-image1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+/* 小标题样式 */
+.center-subtitle {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 600;
+    font-size: 20px;         /* 可调字号 */
+    color: #ffcd9a;          /* 可调颜色 */
+    text-align: right;      /* 水平居中 */
+    margin: 40px 0;          /* 上下间距，可调 */
+    padding-right: 60px; /* 向左推40px，可调 */
+}
+
+
+
+:root{
+  --container-width: 420px;
+  --card-bg: #ffffff;
+  --card-radius: 16px;
+  --card-shadow: 0 2px 12px rgba(16,24,40,0.06);
+  --mask-color: var(--card-bg); /* 遮罩颜色，默认跟卡片/页面背景一致 */
+}
+
+/* 容器（可在这里设置 fixed/absolute 定位） */
+.notification-root{
+  width: 100%;
+  max-width: var(--container-width);
+  /* container-height 会由脚本根据 itemHeight & maxVisible 计算并注入为 --container-h */
+  height: var(--container-h, 520px);
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+  /* 如果你想固定在右下角，打开下面两行 */
+  /* position: fixed;
+     right: 24px;
+     bottom: 24px; */
+  pointer-events: auto;
+  background: transparent;
+}
+
+/* 内部放置绝对定位的卡片 */
+.list{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 单条通知（使用 CSS 变量 --y 控制位移，--s 控制缩放，--op 控制透明度） */
+.notification {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: var(--item-h, 84px); /* 由 JS 注入 --item-h */
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  transform: translateY(var(--y, 0px)) scale(var(--s, 1));
+  opacity: var(--op, 1);
+  transition:
+    transform var(--move-dur, 450ms) cubic-bezier(.2,.9,.2,1),
+    opacity var(--fade-dur, 600ms) ease;
+  will-change: transform, opacity;
+  z-index: 10;
+  user-select: none;
+}
+
+/* 小图标 */
+.notification .icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* 文本部分 */
+.notification .content {
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.notification .title {
+  font-weight:600;
+  font-size:14px;
+  color:#0f172a;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.notification .title-text {
+  font-size: 15px;      /* 调整公司名字体大小 */
+  color: #c94e4e;       /* 改字体颜色 */
+  font-weight: bold;    /* 可选，加粗 */
+}
+
+.notification .time {
+  font-size:12px;
+  color:#6b7280;
+}
+.notification .desc {
+  font-size:13px;
+  color:#374151;
+  margin-top:4px;
+    font-size: 17px;   /* 调整大小 */
+  color: #323232;       /* 改颜色 */
+  margin-top: 1px;   /* 调整与标题的间距 */
+  font-weight: bold;
+}
+
+/* hover 放大（通过改写 --s）*/
+.notification:hover {
+  --s: 1.03;
+  cursor: pointer;
+}
+
+/* 底部雾化遮罩（阻止 pointer，视觉上遮住底部） */
+.bottom-mask{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--mask-h, 120px); /* 由 JS 注入 --mask-h */
+  pointer-events: none;
+  background: linear-gradient(to top, var(--mask-color, #fff) 0%, rgba(255,255,255,0) 100%);
+}
+
+/* 当需要整体淡出（脚本会给 root 加上 .fade-all） */
+.notification-root.fade-all .notification {
+  opacity: 0;
+  transform: translateY(calc(var(--y,0px) - 6px)) scale(0.995);
+}
+
+/* 响应式示例：窄屏时自动缩小宽度 */
+@media (max-width:420px){
+  :root { --container-width: calc(100% - 32px); }
+  .notification { left: 8px; right: 8px; }
+}
+
+
+
+
+.text-with-notifications {
+  display: flex;
+  align-items: flex-start; /* 顶部对齐 */
+  gap: 20px;
+  width: 100%; /* 宽度足够撑开 */
+  box-sizing: border-box;
+}
+
+.text-column {
+  flex: 1;         /* 占满剩余空间 */
+  max-width: 65%;  /* 左边最大宽度65% */
+  box-sizing: border-box;
+}
+
+.notification-column {
+  flex: 0 0 420px; /* 固定宽度，和你的组件宽度保持一致 */
+  box-sizing: border-box;
+}
+
+
+  body {
+    margin: 0;
+    font-family: "Noto Serif SC", serif;
+    background: #f9f9f9;
+  }
+  .container-full {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+  }
+  .text-column-long {
+    flex: 1;
+    padding-right: 30px;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #222;
+    /* 留出500px视频宽度+间距，保证文字宽度最大化 */
+    max-width: calc(100% - 530px);
+     margin-left: -20px; 
+     margin-bottom:1.4em;
+
+     
+  }
+  .fixed-video-right {
+    position: fixed;
+    top: -50px;     /* 你可根据需要调节 */
+    right: -100px;    /* 离视口右边距离 */
+    width: 500px;
+    height: auto;
+    z-index: 1000;
+        position: relative;
+  }
+  .fixed-video-right video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 0px;
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+  }
+
+
+
+  .three-card-wrapper-v2 {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    gap: 16px;
+    width: 100%;
+    margin: 40px auto;
+  }
+
+  .right-column-v2 {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .card-v2 {
+    background: #fffcf5;
+    position: relative; /* 作为绝对定位浮层的定位上下文 */
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    overflow: hidden; /* 防止放大时外溢影响视觉 */
+    transition: all 0.5s ease-in-out;
+    padding: 40px 30px 60px;
+    box-sizing: border-box;
+    font-family: "Noto Serif SC", serif;
+    color: #bd9f67;
+    will-change: transform;
+  }
+  .large-card-v2 .card-detail-v2 {
+  bottom: 60px; /* 比原来的24px高36px，正文整体上移 */
+}
+
+  /* 固定卡片高度，避免任何内容变化导致高度增长 */
+  .large-card-v2 {
+    height: 517px;
+    max-width: 550px;
+  }
+  .small-card-v2 {
+    height: 250px;
+    max-width: 600px;
+  }
+
+  .border-v2 {
+    position: absolute;
+    inset: 0;
+    border: 2px solid #a88951;
+    opacity: 0;
+    transform: rotate(10deg);
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: 10;
+    
+  }
+
+.title-wrapper-v2 {
+  position: absolute;       /* 从相对定位改为绝对定位 */
+  top: 20px;                 /* 距离卡片顶部 20px，可自行调整 */
+  left: 50%;                 /* 水平居中基准 */
+  transform: translateX(-50%); /* 让中心对齐 */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: default;
+  white-space: nowrap;
+  z-index: 20;
+  
+  
+}
+  /* 主标题：始终居中，不移动 */
+  .card-title-v2 {
+    font-size: 33px;
+    font-weight:900;
+    color: #6f3d00;
+    position: relative;
+    z-index: 21;
+    white-space: nowrap;
+  }
+
+  /* 副标题：默认隐藏，通过宽度与透明度过渡 */
+  .card-subtitle-v2 {
+    font-size: 18px;
+    font-weight:600;
+     color: #6f3d00;
+    white-space: nowrap;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: opacity 0.35s ease-in-out, max-width 0.35s ease-in-out;
+    
+  }
+  .card-v2:hover .card-subtitle-v2 {
+    opacity: 1;
+    max-width: 220px;
+  }
+
+  /* 详细内容：绝对定位浮层，覆盖在卡片内部，不占据文档流 */
+  .card-detail-v2 {
+    position: absolute;
+    top: 90px; /* 增大底部距离，让正文往上移，和绝对定位的标题错开 */
+    left: 24px;
+    right: 24px;
+    /* 作为卡片内的面板：背景同色或稍微半透明都可，这里用同色 */
+    background: #e3aa8400;
+    border-radius: 8px;
+    padding: 12px 16px;
+    list-style: disc inside;
+    font-size: 16px;
+    line-height: 1.6;
+         color: #5a3103;
+
+    /* 仅用透明度和轻微位移做过渡，不改变尺寸，不推挤布局 */
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    /* 不阻挡鼠标事件（默认关闭），悬停时开启 */
+    pointer-events: none;
+    z-index: 19; /* 在标题之下，避免挡住标题；如需盖住标题可调大 */
+    max-height: calc(100% - 120px); /* 安全限制，保证不溢出卡片内部 */
+    overflow: auto; /* 内容多时在浮层内部滚动 */
+  }
+  .card-v2:hover .card-detail-v2 {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* 悬停时视觉反馈：不改变布局，仅放大与描边 */
+  .card-v2:hover {
+    border-radius: 10px;
+    transform: scale(1.05);
+    z-index: 20;
+  }
+  .card-v2:hover .border-v2 {
+    inset: 15px;
+    opacity: 1;
+    transform: rotate(0);
+  }
+
+
+  .indent2 {
+  display: inline-block; /* 让缩进生效 */
+  text-indent: 1.5em;      /* 缩进两个汉字宽度 */
+}
+
+/* 卡片正中图片 */
+.center-image-v2 {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; /* 可根据需求调整大小 */
+  height: auto; /* 可根据需求调整大小 */
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 5; /* 在标题和内容之下 */
+}
+
+/* 悬停卡片时图片渐隐 */
+.card-v2:hover .center-image-v2 {
+  opacity: 0;
+}
+
+
+.center-subtitle1 {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 500;
+    font-size: 18px;         /* 可调字号 */
+    color: #683400;          /* 可调颜色 */
+    text-align: right;      /* 水平居中 */
+    margin: 40px 0;          /* 上下间距，可调 */
+    padding-right: 60px; /* 向左推40px，可调 */
+}
+
+

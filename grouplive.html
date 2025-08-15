@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>团播困境：聚光灯外的真相</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="styles2.css">
+ <!-- 引入 ECharts 和词云插件，放 head 也可以 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts-wordcloud@2/dist/echarts-wordcloud.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+</head>
+
+</head>
+<!-- 顶部 hero2（正常流内块） -->
+<div id="hero2" class="hero2"></div>
+
+<!-- 覆盖层：封面1→封面2渐隐渐显 -->
+<div id="coverTransition" class="coverTransition" aria-hidden="true">
+  <div class="coverLayer cover1" style="background-image:url('images/主封面.png');"></div>
+  <div class="coverLayer cover2" style="background-image:url('images/副封面.png');"></div>
+</div>
+
+<div class="full-width-image-container">
+    <img src="images/过渡.png" alt="封面图片" class="full-width-image">
+</div>
+
+
+  <!-- 索引 -->
+    <nav class="nav">
+        <a href="#intro">引子</a>
+        <a href="#p1">“可是我才24岁”</a>
+        <a href="#p2">“这算什么正经工作”</a>
+        <a href="#p3">“我们都是消耗品”</a>
+        <a href="#p4">路在前方</a>
+    </nav>
+
+    <!-- 1. 引子（浅黄） -->
+    <section id="intro" class="light">
+        <div class="content-wrap">
+            <p>聚光灯倾洒而下，卡卡立于中央，簇拥的鲜花与如潮掌声将她环绕。她抬头望，漫天彩带肆意飞舞，如梦似幻。</p>
+            <p>几年前，卡卡放弃待遇不错的单位工作，不顾家人的反对，孤身一人来到杭州，参加了“SK女团”的海选。凭借姣好的外貌和扎实的舞蹈功底，她成为SK望江路019号的一员。<mark class="highlight">“一晚可跳30支舞”、“表演观赏性极强不公式化”、“表情管理无懈可击”</mark>都是卡卡身上的标签，助推她在一年内跻身抖音团播顶流行列，是当之无愧的现象级主播。</p>
+              <div style="position: relative;">
+  <div class="imagetool5">
+    <img src="images/kaka.png" alt="kaka" style="width:100%; height:100%;">
+  </div>
+            <!-- === 把下面整个块插到你页面想放的位置（已隔离样式） === -->
+<div class="marquee3d-demo" id="marquee3d-demo-1">
+  <div class="marquee3d-container">
+    <div class="marquee3d-wrapper">
+
+      <!-- 列 1：data-reverse="false" 表示向上滚动（和原来一致） -->
+      <div class="marquee3d-col" data-reverse="false" data-speed="36">
+        <div class="marquee3d-track">
+          <!-- 原始至少放 6 个卡片来保证视觉丰富 -->
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>M</figcaption><p>@mmm</p></div></div>
+            <blockquote>卡姐！！</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>N</figcaption><p>@nnn</p></div></div>
+            <blockquote>她是当之无愧的顶流</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>O</figcaption><p>@ooo</p></div></div>
+            <blockquote>好羡慕，真的是年少有为呀...</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>P</figcaption><p>@ppp</p></div></div>
+            <blockquote>团播这么赚钱的吗！？</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>Q</figcaption><p>@qqq</p></div></div>
+            <blockquote>卡卡卡卡卡卡</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>R</figcaption><p>@rrr</p></div></div>
+            <blockquote>加油卡卡！！！</blockquote>
+          </figure>
+        </div>
+      </div>
+
+      <!-- 列 2：data-reverse="true" 表示相反方向 -->
+      <div class="marquee3d-col" data-reverse="true" data-speed="36">
+        <div class="marquee3d-track">
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>G</figcaption><p>@ggg</p></div></div>
+            <blockquote>太喜欢她了！</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>H</figcaption><p>@hhh</p></div></div>
+            <blockquote>表情管理一直都这么完美</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>I</figcaption><p>@iii</p></div></div>
+            <blockquote>爱了爱了</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>J</figcaption><p>@jjj</p></div></div>
+            <blockquote>卡卡跳舞好好看！</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>K</figcaption><p>@kkk</p></div></div>
+            <blockquote>好美呀</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>L</figcaption><p>@lll</p></div></div>
+            <blockquote>永远支持卡卡！！</blockquote>
+          </figure>
+        </div>
+      </div>
+      <!-- 列 3：data-reverse="false" 表示向上滚动（和原来一致） -->
+      <div class="marquee3d-col" data-reverse="false" data-speed="36">
+        <div class="marquee3d-track">
+          <!-- 原始至少放 6 个卡片来保证视觉丰富 -->
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>A</figcaption><p>@aaa</p></div></div>
+            <blockquote>她真的很热爱跳舞呀</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>B</figcaption><p>@bbb</p></div></div>
+            <blockquote>真有实力！</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>C</figcaption><p>@ccc</p></div></div>
+            <blockquote>夸夸</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>D</figcaption><p>@ddd</p></div></div>
+            <blockquote>我也想去当主播了</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>E</figcaption><p>@eee</p></div></div>
+            <blockquote>顶流！</blockquote>
+          </figure>
+          <figure class="marquee3d-card">
+            <div class="header"><div class="avatar"></div><div><figcaption>F</figcaption><p>@fff</p></div></div>
+            <blockquote>期待卡卡的新舞</blockquote>
+          </figure>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 渐变遮罩（保留 3D 视觉） -->
+    <div class="marquee3d-fade top"></div>
+    <div class="marquee3d-fade bottom"></div>
+    <div class="marquee3d-fade left"></div>
+    <div class="marquee3d-fade right"></div>
+  </div>
+</div>
+
+            <p>时间来到2025年暑假，一则名为“差点忘了以前是干嘛的”挑战在抖音爆火，专属的煽情BGM，前后职业巨大的反差，使其只用了短短一周就引来上万人参与，总播放量超过十亿。在这一挑战中，参与度最广的，就是“自从做了团播，差点忘了之前是干嘛的”。</p>
+            <p>这场全民狂欢像一面棱镜，折射出团播行业对传统职业叙事的颠覆。</p>
+
+                 <div class="container">
+        <div class="section">
+            <div class="image-container5">
+                <img src="images/screen_notags.png" alt="Main Image" class="main-image5" id="mainImage">
+                <img src="images/button1.png" alt="Button 1" class="tag-button" id="button1" style="position: absolute; top: 33%; left: 2%; width: 110px; height: 110px;">
+                <img src="images/button2.png" alt="Button 2" class="tag-button" id="button2" style="position: absolute; top: 55.3%; left: 2%; width: 110px; height: 110px;">
+                <img src="images/tag1.png" alt="Tag 1" class="tag" id="tag1" style="position: absolute; left: 14%; width: 700px; height: 310px;">
+                <img src="images/tag2.png" alt="Tag 2" class="tag" id="tag2" style="position: absolute; left: 12%; width: 680px; height: 287px;">
+            </div>
+        </div>
+    </div>
+            <div class="center-subtitle1" style=margin-top:-120px;>
+    *请点击手机中头像查看详细信息
+            </div>
+            <p style="margin-top:80px;">团播所带来的变现能力，正在一次又一次被刷新。</p>
+            <p>团播的爆火，为本就狂飙突进的直播行业注入了新的躁动，许多在职场失意的年轻人，将团播当成自己的造梦基地，憧憬着在璀璨的灯光与动感的节奏中复刻卡的逆袭神话。</p>
+            <p>然而，团播真的如屏幕上所见，仅需靓丽妆容和轻松舞姿便能光鲜亮丽吗？</p>
+            <!-- 插入图片的容器 -->
+
+        </div>
+    </section>
+    
+<div class="full-width-image-container">
+    <img src="images/封面2.png" alt="封面图片" class="full-width-image">
+</div>
+
+    <!-- 2. 第一部分（深蓝） -->
+    <section id="p1" class="dark">
+        <div class="content-wrap">
+            <p> </p>
+            <p>凌晨两点，陈默关掉音响和补光灯，一个人在练舞室的地板上坐了很久。与三小时前还在直播间里活力四射，扭胯比心的她相比，此刻的陈默连换下被汗水浸湿的T恤的力气都没有。</p>
+             <div class="interactive-container">
+                <img id="avatar" src="images/avatar.png" alt="人物头像">
+                <!-- 对话框图片用SVG来表示 -->
+                <svg class="dialogue-image" viewBox="0 0 500 500">
+                    <image href="images/陈默.png" x="0" y="0" width="500" height="500"></image>
+                </svg></div>
+            <p class="adjust-position-1">陈默的困境绝非孤例。</p>
+            <p>国家统计局数据显示，不含在校生的16-24岁城镇青年失业率，在整体城镇调查失业率中占比最高。上涨的数字背后，是数百万和陈默一样在传统就业市场碰壁的年轻人。</p>
+            <div class="imagetool">
+    <img src="images/失业率.png" alt="失业率" class="imagetool">
+</div>
+            <p style="margin-top: 50px;">智联招聘报告指出，<mark class="highlight2">应届生平均投递简历超30份方能获得一次面试机会</mark>，不断创造新高的高校毕业人数与显著收缩的企业招聘需求，使得本就严峻的就业环境雪上加霜。</p>
+            <p>团播就是在这时候进入大众的视野。</p>
+                      <!-- 包裹段落和图片的容器 -->
+<div class="text-image-wrap1">
+    <!-- 段落部分 -->
+    <div class="text-column">
+         <p>与传统的直播模式不同，团播是一种多主播共同参与的直播形式，通常由<mark class="highlight2">四到八个主播</mark>进行才艺表演，并配有主持人控场。观众通过打赏礼物操控直播内容：<mark class="highlight2">“点舞”、“变装”、“PK赛”</mark>……主播无需独立承担整场直播的压力，只需要专注自己展示才艺的环节，配合主持人烘托气氛，时不时响应评论区。对缺乏直播经验，渴望快速入行、就业的年轻人来说，这种<mark class="highlight2">“有队友兜底”</mark>的模式，无疑降低了其心理负担与操作难度。</p>
+      </div>
+
+    <!-- 固定在右边的图片 -->
+    <div class="fixed-image1">
+        <img src="images/流程.png" alt="右侧固定图片">
+    </div>
+</div>
+            
+           <!-- 中间小标题组件 -->
+<div class="center-subtitle">
+    *可将鼠标悬浮于卡片上进行交互
+</div>
+
+<div class="image-row-wrapper">
+  <div class="image-row">
+    <div class="img-wrapper img-left">
+      <img src="images/h637.png" alt="左图">
+    </div>
+    <div class="img-wrapper img-right">
+      <img src="images/tiktok.png" alt="右图">
+    </div>
+  </div>
+</div>
+            <p style="margin-bottom: 75px;">无论从哪方面数据来看，团播都已成为互联网经济的重要组成部分。团播这匹<mark class="highlight2">2025年声量增速超1100%、互动量破2.5亿</mark>的黑马，正以工业化造星流水线重塑大众的就业观念，在“去身份化”的表演中折射出大众对参与感与情绪价值的极致追求。</p>
+              <div id="container">
+        <div id="chart"></div>
+        <div id="buttons">
+            <button class="btn active" id="monthlyBtn">Monthly</button>
+            <button class="btn" id="yearlyBtn">Yearly</button>
+        </div>
+    </div>
+            <p style="margin-top: 75px;">根据蓝鲸新闻调查的数据显示，团播群体里，<mark class="highlight2">68%是在校或应届女大学生，平均年龄仅21.3岁</mark>，甚至不乏211、985等高校毕业生，拿过的奖状数不胜数。当体制内“上岸”竞争白热化、企业岗位需求紧缩、工作低薪高压的社会环境影响之下，年轻人们试图抓住团播这份充满不确定的“新饭碗”，将这份看似“来钱快、门槛低”的工作，当作自救的浮木。</p>
+            <p>团播是大众在就业寒冬期的桎梏中凿开的光孔，哪怕这束光终将灼伤自己。</p>
+            <p>“加入团播，我都快忘了我之前是做什么的。谁想得到去年我还素面朝天在图书馆自习呢。但我总是要吃饭的，总不能一辈子啃老。要是再考下去，年纪大了，什么工作都不要我。”陈默苦笑着说。</p>
+        </div>
+    </section>
+
+<div class="full-width-image-container">
+    <img src="images/封面3.png" alt="封面图片" class="full-width-image">
+</div>
+
+    <!-- 3. 第二部分（深蓝） -->
+    <section id="p2" class="dark">
+        <div class="content-wrap">
+            <div class="interactive-container">
+                <img id="avatar" src="images/avatar2.png" alt="人物头像">
+                <!-- 对话框图片用SVG来表示 -->
+                <svg class="dialogue-image" viewBox="0 0 500 500">
+                    <image href="images/橘子对话.png" x="0" y="12px" width="500" height="500"></image>
+                </svg></div>
+             <p class="adjust-position-1">几乎在每个团播主播背后，都萦绕着的来自家庭和社会质疑的声浪。</p>
+            <!-- 包裹段落和图片的容器 -->
+<div class="text-image-wrap">
+    <!-- 段落部分 -->
+    <div class="text-column1">
+        <p>橘子今年刚从本地师范学院毕业，在就业屡屡碰壁后，经同学介绍加入了一个以“cosplay”为卖点的团播女团。当她兴高采烈地将找到工作的消息告知父母时，换来的不是支持，而是父亲砸碎的茶杯和母亲歇斯底里的哭喊。</p>
+      </div>
+
+    <!-- 固定在右边的图片 -->
+    <div class="fixed-image">
+        <img src="images/manga.png" alt="右侧固定图片">
+    </div>
+</div>
+            <p>问卷调查结果显示，受访的<mark class="highlight2">397名</mark>家长中，仅有<mark class="highlight2">3.5%的家长能够接受</mark>子女将团播作为主业，<mark class="highlight2">12.6%的家长持中立态度</mark>，但担忧其收入的稳定性和是否有合理的社会保障，<mark class="highlight2">83.9%的家长对团播表达了强烈的抵触</mark>，认为团播职业在主流社会（尤其亲友圈）中存在偏见，担心子女会遭受“不务正业”、“吃青春饭”、“出卖自我”的负面评价。</p>
+            <p style="margin-bottom: 50px;">家庭的阻力，只是社会普遍偏见的一个缩影。 在各大媒体平台，团播主播们承受着更为尖锐的审视与批判。</p>
+             <div class="imagetool2">
+    <img src="images/观点分布标题.png" alt="观点分布标题" class="imagetool2">
+</div>
+  <div id="danmakuSection" aria-hidden="true" style="position: relative; overflow: hidden; background:#1F2937; height: 462px;">
+    <div id="danmakuContainer" style="position: relative; width: 100%; height: 462px;"></div>
+  </div>
+             <p style="margin-top: 15px; margin-bottom: 90px;">抖音“团播”话题集中呈现了公众对团播职业的看法，通过数据采集与分析后发现“不务正业”是大众对团播的最常出现的评价。除此之外，还有不少如“累死累活”、“搞擦边”、“不如进厂”的负面评价，即使大众讨论中也意识到“大环境不好”、“就业难”， 但当年轻人试图在“团播”这条新赛道上谋生时，社会评价却呈现出一种尖锐的矛盾：<mark class="highlight2">既哀叹传统路径的堵塞，又对新生的、非传统的求生方式投以鄙夷与质疑。</mark></p>
+
+             <div class="imagetool3">
+    <img src="images/wordcoud.png" alt="wordcoud" class="imagetool3">
+</div>
+             <div style="position: relative;">
+  <!-- 你的图片或词云图容器 -->
+  <div id="main" style="float: center;"></div>
+
+  <!-- 新添加的纵向提示区域 -->
+  <div 
+    style="
+      position: absolute;
+      top: -30px;
+      left: 40px; /* 紧挨着图片右边600px + 20px间距 */
+      height: 550px;
+      font-size: 18px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      z-index: 10;
+      border-left: 1px solid #eeeeee00;
+      background: transparent;
+      user-select: none;
+    "
+  >
+    <!-- 纵向文字提示 -->
+    <div 
+      style="
+        writing-mode: vertical-rl;
+        transform: rotate(0deg);
+        text-orientation: mixed;
+        line-height: 1.5;
+        white-space: nowrap;
+      "
+    >
+      （ 鼠标悬浮查看详细信息↑）
+    </div>
+  </div>
+</div>
+
+            <p style="margin-top: -110px;">橘子坦言，有很长一段时间，她不敢看小红书和抖音，要学的舞蹈都是同事下载好后转发给她。</p>
+            <p>“不敢看，但又忍不住看。我总希望能看到一些鼓励。但都不是。大家觉得我们是<mark class="highlight2">打着女团的幌子，干着软色情的生意</mark>。那些评论看多了，连我都开始怀疑：自己是不是真的像他们说的那么不堪？是不是读了这么多年书，最终却选了一条最差的路。”</p>
+            <p>家庭的不理解、社会的恶评，让许多主播陷入深深的自我怀疑之中。公众的不理解如同无数面镜子，映照出主播们内心的割裂与迷茫，并将这份困境无限放大，让他们在聚光灯下，也无处遁形。</p>
+        </div>
+    </section>
+
+<div class="full-width-image-container">
+    <img src="images/封面4.png" alt="封面图片" class="full-width-image">
+</div>
+
+    <!-- 4. 第三部分（深蓝） -->
+    <section id="p3" class="dark">
+        <div class="content-wrap">
+               <div class="interactive-container">
+                <img id="avatar" src="images/avatar3.png" alt="人物头像">
+                <!-- 对话框图片用SVG来表示 -->
+                <svg class="dialogue-image" viewBox="0 0 500 500">
+                    <image href="images/安然.png" x="0" y="20px" width="500" height="500"></image>
+                </svg></div>
+            
+
+<div class="text-with-notifications" style="position: relative; top: -200px;">
+  <div class="text-column">
+    <p>去年四月安然辞掉工作来到杭州，面对逼仄的就业空间，一条条团播招聘广告攫住了她的目光。</p>
+    <p>团播，听起来像<mark class="highlight2">梦想的捷径</mark>，又契合她对舞蹈的热爱。几乎没怎么犹豫，安然便一头扎了进去。</p>             
+    <p>然而，现实与偶像梦之间，横亘着一条冰冷的鸿沟。团播只图快钱，大多数MCN提供的培训被压缩到极限——5天，最多15天。而学习内容不过是几支十几秒的手势舞。</p>
+  </div>
+
+  <div class="notification-column">
+    <!-- 这里放你现有的通知组件 -->
+    <div id="notification-root" class="notification-root">
+      <div class="list" id="notification-list" aria-live="polite"></div>
+    </div>
+  </div>
+</div>
+
+            <p style="margin-top: -170px;">带着初入行的新鲜感，安然完成了那短短五天的培训，学会了七支十几秒的舞蹈，大多是些扭动身躯、撩拨眼神的动作。为了“包装”自己，她甚至自掏腰包购置了假发、紧身衣、高跟鞋、千奇百怪的配饰——这是“梦想”的入场券，需要自己买单。</p>
+            <p style="margin-bottom: -30px;">然而开播后的日子，不是逐梦，是坠入一场醒不过来的噩梦。</p>
+            <!-- Lottie动画放这里 -->
+            <div id="lottieContainer1" style="width:300px; height:300px; margin: 20px auto;"></div>
+            <p style="margin-top: -30px;">安然说：“‘灵活’是公司强调的关键词，我不能保证不会很晚。也可能因为突发情况，比如粉丝刷礼物多或者 PK 时间长，不能按时下播。主播这行很灵活，不能说上播就准时下播。”但在白纸黑字的规定上，这个工作时长被定位每月不低于“<mark class="highlight2">132个小时/月”和“26天/月</mark>”。</p>
+
+
+
+<div class="container-full">
+  <div class="text-column-long">
+    <p>负责人明确告诉安然，工作时长是开播后每天直播<mark class="highlight2"> 6 个小时</mark>，分两场，上半场三个小时，下半场三个小时，中间休息一两个小时，有些时候为了给直播间引流，甚至要三个小时<mark class="highlight2">不间断地重复同一个舞蹈</mark>，直至点赞数量超过设定标准，才能休息。</p>
+    <p>直播结束往往已是深夜11点甚至12点。然而，“下班”二字遥遥无期。紧随而来的是数据复盘会，运营和主持人冰冷地分析着当晚的“战绩”。直到凌晨1点多，主播才能拖着灌铅般的双腿回到家。</p>
+    <p><mark class="highlight2">推开家门并非解脱。</mark></p> 
+  </div>
+
+  <div class="fixed-video-right">
+    <video id="videoFixed" preload="none" muted playsinline>
+      <source src="video/wechat.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+
+
+
+            <p style="margin-top: -30px;">根据新抖对团播观看粉丝群体的统计，<mark class="highlight2">观看团播的粉丝中，95.3%为女性，4.7%为男性，粉丝年龄普遍在18-23岁。</mark>与以往直播间内“榜一大哥”当道不同，现在不只是大哥，年轻女大、海外留学生、江浙沪女高等，越来越多的女性用户准时准点蹲在直播间里为喜欢的团播刷着不计其数的礼物，甚至为其组成粉丝团应援，乐此不疲。</p>
+                        <div class="imagetool4">
+    <img src="images/sex.png" alt="sex" class="imagetool4">
+</div>
+            <p style="margin-top: 30px;">这些女性粉丝中，许多是原本偶像选秀节目的受众。随着此类节目被禁，她们将“追逐偶像练习生”的养成系热情与需求转向了具有竞争性（如PK）和类选秀机制的团播平台。为了有效刺激她们的消费意愿，团播成员需要持续精进舞蹈技艺，让粉丝真切感受到成员在PK时日复一日的进步与舞台上的蜕变，提供向上生长的情绪价值。</p>
+            <p style="margin-bottom: -30px;">此外，仍有小部分31-40岁的中青年男性观众。他们作为团播的传统受众来源，更倾向于欣赏更具视觉冲击力的表演，并渴望在互动中获得掌控感。一些吸引不到女粉的小主播，为了维系这批原有用户，就必须做出“吸睛”的动作：穿着紧到窒息的短裙，在镜头前狂跳至表情失控、气喘吁吁，也就是俗称的“擦边”。</p>
+            <!-- Lottie动画放这里 -->
+            <div id="lottieContainer" style="width:300px; height:300px; margin: 20px auto;"></div>
+            <p>无论目标群体如何，高强度的固粉（维系和打投粉丝的关系）始终是主播日常运营的核心——主播们必须立刻给当晚刷过礼物的榜前30们挨个发送感谢私信。业内管这叫“写作业”。安然无奈地说：“公司要求每天至少发送50条“作业”，截图发群里，少一条，工资扣5元。”</p>
+             <p style="margin-bottom: 100px;">常常，敲完最后一条信息，窗外天色已泛白。若遇上要学新舞的日子，睡眠更是被彻底挤占的奢侈品。</p>
+            <p class="adjust-position+1">  </p>
+            
+                <div class="eyes-clock-wrapper">
+                    <div class="eyes-clock-container" id="eyesContainer">
+                        <div class="clock-container">
+                            <div class="clock-circle" id="clockCircle">
+                                
+                            </div>
+                        </div>
+                        <div class="eye-container">
+                            <div class="eye">                    
+                                <div class="eye-closed" id="leftEyeClosed"></div>
+                                <div class="eye-pupil" id="leftPupil">
+                                    <div class="eye-highlight"></div>
+                                    <div class="happy-effect" id="leftHappyEffect"></div>
+                                </div>
+                            </div>
+                            <div class="eyebrow" id="leftEyebrow"></div>
+                        </div>
+                        <div class="eye-container">
+                            <div class="eye">
+                                <div class="eye-closed" id="rightEyeClosed"></div>
+                                <div class="eye-pupil" id="rightPupil">
+                                    <div class="eye-highlight"></div>
+                                    <div class="happy-effect" id="rightHappyEffect"></div>                    
+                                </div>
+                            </div>
+                            <div class="eyebrow" id="rightEyebrow"></div>
+                        </div>        
+                    </div>
+                    <div class="time-display"> 
+                            <div class="anrandeyitian" style="font-weight: bold;">团播主播安然的一天</div> <!-- 加粗字体 --><!-- 添加标题 -->
+                            <div class="fubiaoti-text">请将鼠标悬停在时钟对应位置查看</div>
+            
+                        <div class="time-box" id="timeBox">23:00-24:00</div>
+                        <div class="status-text" id="statusText">直播</div>
+                    </div>
+                </div>
+
+              <p style="margin-top: 100px;">除了每天高强度的工作安排，团播对主播的身材管理也有着极其严苛的标准。</p>
+            <p style="margin-bottom: 70px;">以女主播们挤破脑袋都想加入的顶级经纪公司SK（杭州帅库文化传媒有限公司）为例，其在招聘团播成员时明确规定：<mark class="highlight2">身高160-165cm的主播体重必须长期控制在90斤以下；而身高172cm、体重110斤，则被直接划入“完全不合格”范畴。</mark>其所规定的身高体重按照国家卫生健康委员会所提供的BMI标准来看，SK对女生BMI的标准<mark class="highlight2">最高是17.6</mark>，属于极度偏瘦。维持极低甚至营养不良的体重标准，成为了她们身体和精神上的另一重挑战。</p>
+            <div class="imagetool1">
+    <img src="images/招募要求.png" alt="招募要求" class="imagetool1">
+</div>
+            <p style="margin-top: 70px;">但在招聘平台和社交媒体上，关于团播主播的广告依然光鲜诱人：非一线城市“保底5000-8000元加20%-30%提成”，一线城市“底薪轻松过万”。</p>
+            <p>华丽的承诺背后，是MCN公司屡试不爽的薪资陷阱。</p>
+            <p>MCN机构的盈利模式本质是“签约—压榨—淘汰”的循环。招聘时承诺的“保底8000元”，实际暗藏着极为苛刻的条件：主播需完成“日均3万点赞＋2小时私聊粉丝”的KPI，否则保底薪资按比例扣除。安然说：“<mark class="highlight2">我第一个月直播流水有1.2万元，扣除平台50%、公司30%的抽成后，到手仅2400元，还因‘迟到3次’被罚1500元。</mark>”</p>
+            <p>她们都被困在这个光鲜的泡泡里，为了那点微薄的、不确定的“保底”，不断消耗着自己，甚至模糊了过去的身份和未来的方向。曾经向往的镁光灯，如今只照亮了她们在不足30㎡的直播间上摇摇欲坠的身影。</p>
+        </div>
+    </section>
+
+<div class="full-width-image-container">
+    <img src="images/封面5.png" alt="封面图片" class="full-width-image">
+</div>
+
+    <!-- 5. 路在前方（浅黄） -->
+    <section id="p4" class="light">
+        <div class="content-wrap">
+            <p>陈周霖是从土木行业转行做团播的，他的成名之战是在一个品牌的直播间跳“扫腿舞”，紧身西装、湿透的白衬衫、若隐若现的肌肉，让他在那段时间收获了不少粉丝。但随之而来的是直播间被禁，他所在的男团被点名警告。</p>
+               <div class="interactive-container">
+                <img id="avatar" src="images/avatar4.png" alt="人物头像">
+                <!-- 对话框图片用SVG来表示 -->
+                <svg class="dialogue-image" viewBox="0 0 500 500">
+                    <image href="images/周陈琳.png" x="0" y="25px" width="500" height="500"></image>
+                </svg></div>
+            <p class="adjust-position-1">昼夜颠倒的工作循环、不温不火的状态、粉丝的不断流失，让陈周霖的处境雪上加霜。为了使直播在短时间内实现利益最大化，公司一步步地试探着他们的底线，这让陈周霖在辞职与天价违约金之间反复挣扎：</p>
+                     <div class="imagetool1">
+    <img src="images/三格漫画.png" alt="三格漫画" class="imagetool6">
+</div>
+            <p style="margin-bottom: -220px;margin-top: -40px;">而他并非个例，事实上，团播市场已经高度饱和。行业头部主播占据70%以上流水，更多的是像陈周霖一样的底层从业者，拿着不足万元的月薪，在“保底工资”的幌子下被无尽压榨。<mark class="highlight">高薪骗局、软性压榨、软色情擦边这些藏在聚光灯后的内幕，正把一个个鲜活的人拖进无声的黑暗里。</mark></p>
+            <!-- Lottie动画放这里 -->
+            <div id="lottieContainer2" style="width:600px; height:600px; margin: 20px auto;"></div>
+            <p style="margin-top: -190px;">更令人心惊的是，这一切似乎正沿着危险的轨迹滑行。</p>
+            <p>作为“抢先服”的日本，其前车之鉴犹在眼前。90年代，日本经济泡沫破灭，大量的日本年轻人找不到工作，他们的生存遇到问题，许多媒体趁机又在宣传“思想解放、自由意志”的内容。这场漫长的“服从性测试”，用温水煮青蛙的方式打破了社会的心理防线，让大量的年轻人开始“下海”从事风俗产业。</p>
+             <p style="margin-bottom: -70px;">据日本经济学家饭田泰之统计，在日本，<mark class="highlight">风俗产业的从业者超30万人。风俗产业每年产值高达5兆日元，也就是人民币3300亿，仅靠风俗业带来的经济收益就占了日本总GDP的0.4%。</mark>风俗产业扩张伴随而来的是严峻的公共卫生挑战。国立传染病研究所（NIID）发布的《性传染病年报》显示：</p>
+            <div id="interactiveSection">
+  <div class="floating-container" id="floatingContainer">
+    <div class="card">
+      <div class="small-text">2024年日本新增梅毒病例</div>
+      <div class="large-text">19872例</div>
+      <div class="small-text">创70年来新高</div>
+    </div>
+    <div class="card">
+      <div class="small-text">东京是梅毒重灾区</div>
+      <div class="large-text">平均每2300个人</div>
+      <div class="small-text">就有1人感染</div>
+    </div>
+    <div class="card">
+      <div class="small-text">感染女性的</div>
+      <div class="large-text">60%</div>
+      <div class="small-text">年龄在20岁左右</div>
+    </div>
+  </div>
+</div>
+            <p style="margin-top: -500px;">如今的团播行业，又何尝不是一场隐秘的，类日本式的“舆论测试”？</p>
+            <p>“差点忘了以前是干什么的”挑战在高考结束期间爆火，<mark class="highlight">向即将步入社会，价值观念还未成熟的青少年鼓吹团播行业，让他们产生传统行业陨落，团播光鲜亮丽的错觉。</mark>涌入团播市场的人数增加，导致竞争愈发激烈。为了吸引更多打赏和关注，团播主播从一开始跳跳抖音热舞，向着穿着暴露、行为充满性暗示发展。</p>
+            <p style="margin-bottom: 90px;">当个例成为群众所模仿的对象时，这些看似没有触碰法律的底线的行为，正在潜移默化的拉低大众道德底线。个体被异化为流量商品，擦边被包装成“行业规则”，整个行业在流量狂欢里，从“流量红利”逐渐滑向“价值洼地”。<mark class="highlight">各方亟需做出行动。</mark></p>
+
+     <div class="three-card-wrapper-v2">
+
+  <!-- 左边大卡片 - 抖音平台 -->
+  <div class="card-v2 large-card-v2">
+    <div class="border-v2"></div>
+    <div class="content-v2">
+        <img src="images/平台logo.png" class="center-image-v2" alt="平台logo">
+      <div class="title-wrapper-v2">
+        <span class="card-title-v2">平台</span>
+        <span class="card-subtitle-v2">作为团播的载体</span>
+      </div>
+
+      <!-- 绝对定位的详情浮层，不参与布局 -->
+      <ul class="card-detail-v2">
+        <li>完善<mark class="highlight2">审核机制</mark>，加强实时监控</li>
+        <li>利用人工智能和人工审核相结合的方式<br>
+        <span class="indent2">严格筛查软色情擦边、低俗内容，违规即警告/限流/封号</span></li>
+        <li>设置合理<mark class="highlight2">流量激励</mark>，弱化纯流量与打赏</li>
+        <li>以质量与创新为导向，给予优质内容更多扶持与奖励</li>
+        <li>引导团队<mark class="highlight2">聚焦表演水平与特色内容</mark>打造</li>
+        <br><br><p style="font-size: medium;">e.g.2025年7月2日，抖音直播发布了《抖音直播机构治理处置结果公示（2025年6月）》，清退<span style="font-size: larger; font-weight: bold;"><mark class="highlight2">54</mark></span>家公会，累计处置<span style="font-size: larger; font-weight: bold;"><mark class="highlight2">194</mark></span>家违规公会，重点打击传播色情低俗、诈骗、未成年经纪服务等行为。</p>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 右侧两张小卡片 -->
+  <div class="right-column-v2">
+
+    <!-- 右上 - 公会 -->
+    <div class="card-v2 small-card-v2">
+      <div class="border-v2"></div>
+      <div class="content-v2">
+          <img src="images/公会logo.png" class="center-image-v2" alt="公会logo">
+        <div class="title-wrapper-v2">
+          <span class="card-title-v2">公会</span>
+          <span class="card-subtitle-v2">作为哺育主播的摇篮</span>
+        </div>
+
+        <!-- 绝对定位的详情浮层 -->
+        <ul class="card-detail-v2">
+          <li>制定更<mark class="highlight2">合理的动作与着装标准</mark></li>
+          <li>科学安排工作时间与<mark class="highlight2">隐性时间</mark></li>
+          <li>开发<mark class="highlight2">优质内容</mark>与健康的收入结构</li>
+          <li>不凭低俗取眼球，不靠擦边博打赏</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 右下 - 主播 -->
+    <div class="card-v2 small-card-v2">
+      <div class="border-v2"></div>
+      <div class="content-v2">
+          <img src="images/主播头像.png" class="center-image-v2" alt="主播头像">
+        <div class="title-wrapper-v2">
+          <span class="card-title-v2">主播</span>
+          <span class="card-subtitle-v2">作为身处其中的个体</span>
+        </div>
+
+        <!-- 绝对定位的详情浮层 -->
+        <ul class="card-detail-v2">
+          <li>树立正确价值观，<mark class="highlight2">增强自我保护意识</mark></li>
+          <li>拒绝参与任何软色情擦边内容</li>
+          <li><mark class="highlight2">坚守底线</mark>，清楚其危害性与违法性</li>
+          <li><mark class="highlight2">理性看待行业</mark>，戳破“一夜暴富”的泡沫</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+           <!-- 中间小标题组件 -->
+<div class="center-subtitle1">
+    *可将鼠标悬浮于卡片上进行交互
+</div>
+
+          
+            <p style="margin-top: 60px;margin-bottom: 40px;">多地政府也配合抖音平台发布了规范团播环境的相应举措：</p>
+                         <div class="imagetool3">
+    <img src="images/地图标题.png" alt="地图标题" class="imagetool7">
+</div>
+<div id="chinaMapWrapper" style="width: 1050px; height: 350px; margin: 0 auto; position: relative; background: #FFF9E6;"> 
+    <!-- 地图容器 -->
+    <div id="chinaMapInner" style="width: 1050px; height: 350px;"></div> 
+
+    <!-- 数据来源 -->
+    <div id="chinaMapSource" style="position: absolute; bottom: 8px; left: 20px; font-size: 14px; color: #444;">
+        数据来源：各地政府官网、相关新闻报道
+    </div>
+</div>
+
+  <div id="chinaMapTipText">
+    （鼠标悬浮于<mark class="highlight2">深色区域</mark>查看详细信息↑）
+  </div>
+
+
+
+    
+            <p style="margin-top: 180px;">今年九月，陈周霖与原MCN的解约官司将正式开庭，开庭前一周，恰好是他的27岁生日。他说：“解约成功，才算真正的新生。接下来的路还没有想好，也许会回归老本行做土木，也许会继续当主播。”</p>
+            <p><mark class="highlight">“路在前方，先向前走着，我始终相信，哪里有路，哪里就会有光。”</mark></p>
+            <p style="margin-top: 90px; text-align: right; font-size: 20px;">*文中出现人物均为化名，且已征得其本人同意</p>
+    </section>
+
+ <section id="p4" class="light" style="font-family: 'Noto Serif SC', serif; padding: 60px 20px;">
+    <p style="margin-top: -40px;font-size: 20px; color: #563502; line-height: 2; text-align: center; text-indent: 0;"><strong>————————————————————</strong></p>
+</section>
+
+ <section id="p4" class="light" style="font-family: 'Noto Serif SC', serif; padding: 60px 20px;">
+  <div class="content-wrap" style="max-width: 800px; margin: 0 auto; text-align: center;">
+    
+    <h3 style="margin-top: -50px;font-size: 30px; font-weight: normal; margin-bottom: 30px; color: #1c0e09;">
+      <strong>制作团队</strong>
+    </h3>
+<p style="font-size: 21px; color: #563502; line-height: 2; text-align: center; text-indent: 0;">
+    <strong>采访：</strong>张煜妍 俞柯宇 邱明媛 吴卓霖<br>
+    <strong>撰文：</strong>张煜妍 俞柯宇<br>
+    <strong>数据分析及可视化：</strong>周奕名 张煜妍<br>
+    <strong>美工：</strong>姚溢 张煜妍<br>
+    <strong>网页搭建：</strong>周奕名
+</p>
+    <h3 style="font-size: 30px; font-weight: normal; margin: 50px 0 20px; color: #1c0e09;">
+    <strong>指导老师</strong>
+    </h3>
+<p style="margin-bottom:-20px;font-size: 21px; color: #563502; line-height: 2; text-align: center; text-indent: 0;">
+      王睿路老师
+    </p>
+  </div>
+</section>
+
+ <section id="p4" class="light" style="font-family: 'Noto Serif SC', serif; padding: 60px 20px;">
+    <p style="margin-top: -20px;margin-bottom:-50px;font-size: 20px; color: #563502; line-height: 2; text-align: center; text-indent: 0;"><strong>————————————————————</strong></p>
+</section>
+
+<section id="references" class="light" style="font-family: 'Noto Serif SC', serif; padding: 30px 20px;">
+  <div class="content-wrap" style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <h3 style="margin-top: -70px;font-size: 30px; font-weight: normal; margin: 50px 0 20px; color: #1c0e09;">
+    <strong>参考文献</strong>
+    </h3>
+<div style="display: inline-block; text-align: justify; max-width: 800px;">
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [1]新京报. 欠薪、擦边、违约金，困在“团播”里的年轻人. https://mp.weixin.qq.com/s/Nvz5KOGQhE1BHIzg5ILUIw
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [2]陆旸,孟繁成. 失业率影响了职业中断持续时间吗?[J]. 东北财经大学学报,2025(1):26-40. DOI:10.19653/j.cnki.dbcjdxxb.2025.01.003.
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [3]YangFanJame. 号称【吊打内娱】的团播，到底是谁在看啊！ https://mp.weixin.qq.com/s/i_-mTsKcA_J6HJsG4nP5Ow
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [4]潘曙雅,张煜祺. 虚拟在场:网络粉丝社群的互动仪式链[J]. 国际新闻界,2014,36(9):35-46.
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [5]TopKlout克劳锐. 直播新风口，团播为何让人上头? https://36kr.com/p/2942106935794311
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [6]《中国网络表演（直播与短视频）行业发展报告（2024-2025）》
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [7]北京日报. 团播为什么这么火. https://www.toutiao.com/article/7528948063281398287/
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [8]新榜. 不靠“大哥”靠女粉，团播能捧出新一代偶像吗？ https://news.qq.com/rain/a/20250623A04AAJ00
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [9]光明网. 打破幻象，不让年轻人被违规“团播”所困. https://guancha.gmw.cn/2025-07/18/content_38160830.htm
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [10]肖军. 禁止下的规制:性产业在日本的法律境遇[J]. 时代法学,2007,5(6):92-98. DOI:10.3969/j.issn.1672-769X.2007.06.014.
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [11]21世纪经济报道. 团播行业“主动自律”：让新兴产业走上“阳光大道”. https://news.qq.com/rain/a/20250811A04Y4R00
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [12]爱媒网. 团播爆火：直播行业新风口下的机遇与挑战. https://www.iimedia.cn/c1088/106686.html
+  </p>
+  <p style="font-size: 16px; color: #555; line-height: 1.4; margin-bottom: 16px; text-indent: 0;">
+    [13]郑建,段美玲. 个体对职业的单向奔赴:青年网络主播的职业选择及审视[J]. 中国青年研究,2025(4):103-111. DOI:10.3969/j.issn.1002-9931.2025.04.012.
+  </p>
+</div>
+
+  </div>
+</section>
+
+
+<script src="script.js"></script>
+<script src="script1.js"></script>
+<script src="script2.js"></script>
+
+</body>
+</html>
