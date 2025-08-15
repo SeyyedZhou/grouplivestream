@@ -478,7 +478,7 @@ video.addEventListener('ended', () => {
             label: { show: false },
             data: mapData,
             center: [104, 36],
-            zoom: 1.4,
+            zoom: 1.1,
             emphasis: {
                 itemStyle: { areaColor: hoverYellow },
                 label: { color: '#000' }
