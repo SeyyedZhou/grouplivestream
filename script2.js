@@ -416,10 +416,6 @@ video.addEventListener('ended', () => {
 });
 
 
-
-
-
-
 (function() { // 独立作用域，避免全局污染
     // 初始化 ECharts 实例
     var chart = echarts.init(document.getElementById('chinaMapInner'));
@@ -486,11 +482,11 @@ video.addEventListener('ended', () => {
         },
         series: [{
             type: 'map',
-            map: 'china',
+            map: 'china', // 已由 CDN 注册
             label: { show: false },
             data: mapData,
-             center: [104, 33],
-            zoom: 1,
+            center: [104, 36],
+            zoom: 1.7,
             emphasis: {
                 itemStyle: { areaColor: hoverYellow },
                 label: { color: '#000' }
@@ -500,14 +496,8 @@ video.addEventListener('ended', () => {
         }]
     };
 
-    // 加载地图数据
-    fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json')
-        .then(resp => resp.json())
-        .then(chinaJson => {
-            echarts.registerMap('china', chinaJson);
-            chart.setOption(option);
-        })
-        .catch(err => console.error('地图加载失败', err));
+    // 直接设置配置项
+    chart.setOption(option);
 
     // 窗口变化自适应
     window.addEventListener('resize', function() {
