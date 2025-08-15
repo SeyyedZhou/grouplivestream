@@ -309,3 +309,11 @@
       z-index: 999;  /* 保证在地图上方 */
           font-size: 16px;
 }
+
+
+.big-wrapper {
+  width: 1589px;      /* 固定宽度 */
+  margin: 0 auto;     /* 居中对齐 */
+  position: relative; /* 让内部的绝对定位元素以它为基准 */
+  background-color: #fff; /* 可选，让背景统一 */
+}
