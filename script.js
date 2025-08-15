@@ -73,7 +73,7 @@
   container.style.height = containerHeight + 'px';
   container.parentElement.style.height = containerHeight + 'px';
 
-  const baseSpeed = 0.012;
+  const baseSpeed = 0.006;
 
   function shuffleArray(arr) {
     const array = arr.slice();
