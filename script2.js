@@ -415,7 +415,6 @@ video.addEventListener('ended', () => {
   played = true;
 });
 
-
 (function() {
     var chart = echarts.init(document.getElementById('chinaMapInner'));
 
