@@ -489,8 +489,8 @@ video.addEventListener('ended', () => {
             map: 'china',
             label: { show: false },
             data: mapData,
-             center: [104, 36],
-            zoom: 1.7,
+             center: [104, 33],
+            zoom: 1,
             emphasis: {
                 itemStyle: { areaColor: hoverYellow },
                 label: { color: '#000' }
