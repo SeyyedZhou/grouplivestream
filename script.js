@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function () {
       drawOutOfBound: false,
       textStyle: {
         fontFamily: 'Noto Serif SC',
-        fontWeight: '600',
+        fontWeight: 'bold',
         // 使用预先分配的颜色，确保高亮不变色
         color: function (params) {
           // params.dataIndex 总是有值，因为词云为 data 驱动
